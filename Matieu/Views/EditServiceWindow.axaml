@@ -1,0 +1,70 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Matieu.EditServiceWindow"
+        Title="Услуга"
+        Width="800" Height="500"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen"
+        SystemDecorations="None"
+        Background="WhiteSmoke">
+
+    <Border BorderBrush="Gray" BorderThickness="1">
+        <Grid RowDefinitions="36,*">
+
+            <Grid Grid.Row="0" Name="titleBar" ColumnDefinitions="*,Auto" Background="#4A90D9">
+                <TextBlock Grid.Column="0" Name="windowTitle" Text="Редактирование услуги"
+                           Foreground="White" VerticalAlignment="Center" Margin="10,0" FontSize="13"/>
+                <Button Grid.Column="1" Name="closeBtn" Content="Закрыть"
+                        Height="36" Padding="10,0" Background="Transparent"
+                        Foreground="White" BorderThickness="0"/>
+            </Grid>
+
+            <Grid Grid.Row="1" ColumnDefinitions="180,*" Margin="12,10">
+
+                <StackPanel Grid.Column="0" Margin="0,0,12,0">
+                    <Border BorderBrush="LightGray" BorderThickness="1" Height="140" Margin="0,0,0,6">
+                        <Image Name="previewImage" Stretch="UniformToFill"/>
+                    </Border>
+                    <Button Name="pickImageBtn" Content="Выбрать фото"
+                            HorizontalAlignment="Stretch" Height="30" Margin="0,0,0,4"/>
+                    <TextBlock Name="imageNameText" FontSize="11" TextWrapping="Wrap"
+                               Foreground="Gray"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Spacing="4">
+                    <TextBlock Text="Название"/>
+                    <TextBox Name="nameBox" Height="30"/>
+
+                    <TextBlock Text="Описание"/>
+                    <TextBox Name="descBox" Height="50" AcceptsReturn="True"/>
+
+                    <TextBlock Text="Цена (руб.)"/>
+                    <TextBox Name="priceBox" Height="30"/>
+
+                    <Grid ColumnDefinitions="*,8,*">
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Категория"/>
+                            <ComboBox Name="categoryBox" HorizontalAlignment="Stretch" Height="30"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Text="Коллекция"/>
+                            <ComboBox Name="collectionBox" HorizontalAlignment="Stretch" Height="30"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,8,*" Margin="0,6,0,0">
+                        <Button Grid.Column="0" Name="saveBtn" Content="Сохранить"
+                                HorizontalAlignment="Stretch" Height="32"
+                                Background="#4A90D9" Foreground="White" BorderThickness="0"/>
+                        <Button Grid.Column="2" Name="cancelBtn" Content="Отмена"
+                                HorizontalAlignment="Stretch" Height="32"/>
+                    </Grid>
+
+                    <TextBlock Name="errorText" Foreground="Red"
+                               HorizontalAlignment="Center" IsVisible="False"/>
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

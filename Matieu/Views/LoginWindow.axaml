@@ -1,0 +1,46 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Matieu.LoginWindow"
+        Title="Матье"
+        Width="800" Height="500"
+        CanResize="False"
+        WindowStartupLocation="CenterScreen"
+        SystemDecorations="None"
+        Background="WhiteSmoke"
+        Icon="avares://Matieu/Resources/Logo.ico">
+
+    <Border BorderBrush="Gray" BorderThickness="1">
+        <Grid RowDefinitions="36,*">
+
+            <Grid Grid.Row="0" Name="titleBar" ColumnDefinitions="*,Auto,Auto" Background="#4A90D9">
+                <TextBlock Grid.Column="0" Text="Матье" Foreground="White"
+                           VerticalAlignment="Center" Margin="10,0" FontSize="13"/>
+                <Button Grid.Column="1" Name="minimizeBtn" Content="Свернуть"
+                        Height="36" Padding="10,0" Background="Transparent"
+                        Foreground="White" BorderThickness="0"/>
+                <Button Grid.Column="2" Name="closeBtn" Content="Закрыть"
+                        Height="36" Padding="10,0" Background="Transparent"
+                        Foreground="White" BorderThickness="0"/>
+            </Grid>
+
+            <StackPanel Grid.Row="1" VerticalAlignment="Center" Width="300" HorizontalAlignment="Center">
+                <TextBlock Text="Вход в систему" FontSize="18" FontWeight="Bold"
+                           HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <TextBlock Text="Логин" Margin="0,0,0,4"/>
+                <TextBox Name="loginBox" Height="32" Margin="0,0,0,12"/>
+
+                <TextBlock Text="Пароль" Margin="0,0,0,4"/>
+                <TextBox Name="passwordBox" PasswordChar="*" Height="32" Margin="0,0,0,20"/>
+
+                <Button Name="loginBtn" Content="Войти"
+                        HorizontalAlignment="Stretch" Height="34"
+                        Background="#4A90D9" Foreground="White" BorderThickness="0"/>
+
+                <TextBlock Name="errorText" Foreground="Red"
+                           HorizontalAlignment="Center" Margin="0,8,0,0" IsVisible="False"/>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Window>
